@@ -51,12 +51,12 @@ resource "aws_iam_role" "iam_for_lambda" {
 
 # --- FUNCIÓN LAMBDA ---
 resource "aws_lambda_function" "mi_primera_lambda" {
-  filename      = "function.zip"
-  function_name = "SaludoLambda"
-  role          = aws_iam_role.iam_for_lambda.arn
-  handler       = "hola_lambda.handler"
-  runtime       = "python3.9"
-  source_code_hash = filebase64sha256("function.zip")
+  filename          = "function.zip"
+  function_name     = "SaludoLambda"
+  role              = aws_iam_role.iam_for_lambda.arn
+  handler           = "hola_lambda.handler"
+  runtime           = "python3.9"
+  source_code_hash  = filebase64sha256("function.zip")
 }
 
 # --- PERMISO: S3 PUEDE INVOCAR LA LAMBDA ---
